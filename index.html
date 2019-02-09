@@ -8,24 +8,29 @@
   </head>
   <body>
 
-    <h1>Shows I love</h1>
-    <div id="shows">
-      <p id="tv-show-1"></p>
-    </div>
+    <!-- <h1>Shows I love</h1>
+    <ul id="shows">
+      <li id="tv-show-1"></li>
+    </ul>
+    <form>
+      <span>Show Name:</span>
+      <input id="tv-show-input" type="text" name="show">
+      <button onclick="addShow()" type="button">Add Show</button>
+    </form> -->
     
     <script>
 
-      // From W3Schools: The document object represents your web page.
-      // If you want to access any element in an HTML page, 
-      // you always start with accessing the document object.
+      // // From W3Schools: The document object represents your web page.
+      // // If you want to access any element in an HTML page, 
+      // // you always start with accessing the document object.
       
       // var tvShow1 = document.getElementById('tv-show-1'); //points to html element with id of 'show-1'
       
       // tvShow1.textContent = 'The Good Place'; // adds texts to tvShow1
       
-      // creates a new html element: <p></p>. 
-      // It now exists in memory but is not visible because we haven't yet placed it anywhere.
-      // var newTvShowElement = document.createElement('p'); 
+      // // creates a new html element: <p></p>. 
+      // // It now exists in memory but is not visible because we haven't yet placed it anywhere.
+      // var newTvShowElement = document.createElement('li'); 
 
       // newTvShowElement.textContent = 'Rick and Morty'; //adds text to newTvShowElement
 
@@ -33,6 +38,14 @@
 
       // myShowsDiv.appendChild(newTvShowElement); // now we place our newTvShowElement in the myShowsDiv
 
+      function addShow() {
+        var showToAdd = document.getElementById('tv-show-input').value;
+        var newTvShowElement = document.createElement('li'); 
+        newTvShowElement.textContent = showToAdd;
+        document.getElementById('shows').appendChild(newTvShowElement);
+      };
+
+    
 
 
         // data types
