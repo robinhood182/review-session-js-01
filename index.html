@@ -8,14 +8,120 @@
 </head>
 <body>
   <div class="container">
-    <div class="data-types">
-      <p class="string"></p>
-      <p class="number"></p>
-      <p class="boolean"></p>
-      <p class="null"></p>
-      <p class="undefined"></p>
-      <p class="object"></p>
-    </div>
+
   </div>
+
+  <script>
+    // data types
+    var myNumber = 1;
+    var myString = 'abc';
+    var myBoolean = true;
+    var myNull = null;
+    var myUndefined = undefined;
+
+    //From MDN: An object is a collection of properties, 
+    //and a property is an association between a name (or key) and a value. 
+    //A property's value can be a function, in which case the property is known as a method. 
+    //In addition to objects that are predefined in the browser, you can define your own objects. 
+    var emptyObject = {};
+
+    var mySongObject = {
+
+      trackLengthInMinutes: 4,
+      name: 'Cream on Chrome',
+      totallyRock: true,
+      composers: ['Evan Mast', 'Mike Stroud'],
+      play: function() {
+        return this.name;
+      },
+      anotherObject: {
+        aProperty: 'hey',
+        anotherOne: 'sup?'
+      }
+    };
+
+    // console.log(mySongObject.play());
+    // console.log(mySongObject.composers[1]);
+
+
+    // conditionals 
+
+    // OR operator
+    // console.log(1 > 2 || 4 > 3);
+
+    // AND operator
+    // console.log(1 > 2 && 4 > 3);
+
+    function umbrellaOrJacket(temperature, isPrecipitating) {
+      
+      if(temperature >= 70 && isPrecipitating === true) {
+        console.log('Bring an umbrella');
+      }
+
+      else if(temperature < 70 && isPrecipitating) {
+        console.log('Bring a rain jacket');
+      }
+
+      else {
+        console.log('No need for umbrellas or rain jackets');
+      }
+    };
+
+    //umbrellaOrJacket(80, true);
+    //umbrellaOrJacket(60, true);
+    //umbrellaOrJacket(80, false);
+    //umbrellaOrJacket();
+
+    //scope
+
+    function sayMyName() {
+      var myName = 'Heisenberg';
+      console.log('Your name is: ' + myName);
+
+      if(true) {
+        let them = 'eat cake';
+        console.log('inside our if block: ', them);
+      }
+      // console.log('var is function scoped', myName);
+      // console.log('let is block scoped', them);
+    };
+
+    sayMyName();
+    // console.log('var is function scoped', myName);
+
+    // for loop
+    
+    function assignGrade(scores) {
+      let grade;
+      for(let i = 0; i < scores.length; i++) {
+        if(scores[i] > 100) {
+          grade = 'S';
+        }
+        else if(scores[i] > 89) {
+          grade = 'A';
+        }
+        else if(scores[i] > 79) {
+          grade = 'B';
+        }
+        else if(scores[i] > 69) {
+          grade = 'C';
+        }
+        else if(scores[i] > 59) {
+          grade = 'D';
+        }
+        else if(scores[i] >= 0) {
+          grade = 'F';
+        }
+        else {
+          grade = 'Invalid Score';
+        }
+        console.log('Grade: ', grade);
+      }
+    };
+
+    scoresArray = [10, 70, 85, 97, 100, -2, 102];
+
+    // assignGrade(scoresArray);
+    </script>
 </body>
 </html>
