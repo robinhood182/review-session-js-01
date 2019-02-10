@@ -8,36 +8,42 @@
   </head>
   <body>
 
-    <!-- <h1>Shows I love</h1>
+    <h1>Shows I love</h1>
     <ul id="shows">
       <li id="tv-show-1"></li>
     </ul>
     <form>
-      <span>Show Name:</span>
+      <label>Show Name:</label>
       <input id="tv-show-input" type="text" name="show">
       <button onclick="addShow()" type="button">Add Show</button>
-    </form> -->
+    </form>
     
     <script>
 
       // // From W3Schools: The document object represents your web page.
       // // If you want to access any element in an HTML page, 
       // // you always start with accessing the document object.
+
+
       
-      // var tvShow1 = document.getElementById('tv-show-1'); //points to html element with id of 'show-1'
+      var tvShow1 = document.getElementById('tv-show-1'); //points to html element with id of 'show-1'
       
-      // tvShow1.textContent = 'The Good Place'; // adds texts to tvShow1
+      tvShow1.textContent = 'The Good Place'; // adds texts to tvShow1
+
+
       
-      // // creates a new html element: <p></p>. 
-      // // It now exists in memory but is not visible because we haven't yet placed it anywhere.
-      // var newTvShowElement = document.createElement('li'); 
+      // creates a new html element: <li></li>. 
+      // It now exists in memory but is not visible because we haven't yet placed it anywhere.
+      var newTvShowElement = document.createElement('li'); 
 
-      // newTvShowElement.textContent = 'Rick and Morty'; //adds text to newTvShowElement
+      newTvShowElement.textContent = 'Rick and Morty'; //adds text to newTvShowElement
 
-      // var myShowsDiv = document.getElementById('shows'); //points to html element with id of 'shows'
+      var myShowsDiv = document.getElementById('shows'); //points to html element with id of 'shows'
 
-      // myShowsDiv.appendChild(newTvShowElement); // now we place our newTvShowElement in the myShowsDiv
+      myShowsDiv.appendChild(newTvShowElement); // now we place our newTvShowElement in the myShowsDiv
 
+
+      //function that gets called 'onclick' in the button element. 
       function addShow() {
         var showToAdd = document.getElementById('tv-show-input').value;
         var newTvShowElement = document.createElement('li'); 
@@ -75,7 +81,7 @@
           anotherOne: 'sup?'
         }
       };
-
+      // console.log(trackLengthInMinutes);
       // console.log(mySongObject.play());
       // console.log(mySongObject.composers[1]);
 
@@ -83,7 +89,8 @@
       // conditionals 
 
       // OR operator
-      // console.log(1 > 2 || 4 > 3);
+      // console.log(1 > 2|| 4 > 3);
+      // console.log(2 !== 1);
 
       // AND operator
       // console.log(1 > 2 && 4 > 3);
@@ -103,27 +110,38 @@
         }
       };
 
-      //umbrellaOrJacket(80, true);
-      //umbrellaOrJacket(60, true);
-      //umbrellaOrJacket(80, false);
-      //umbrellaOrJacket();
+      // umbrellaOrJacket(80, true);
+      // umbrellaOrJacket(60, true);
+      // umbrellaOrJacket(80, false);
+      // umbrellaOrJacket();
 
       //scope
+      //Note: scope 
+
 
       function sayMyName() {
         var myName = 'Heisenberg';
-        console.log('Your name is: ' + myName);
 
-        if(true) {
+        if(true) { 
           let them = 'eat cake';
+          var fork = 'silver';
           console.log('inside our if block: ', them);
+          console.log('var is accessible from anywhere inside our function. var myName:', myName);
+
+          if(true) {
+            console.log('We be here to', them); //Since this 'block' is nested inside the other 'block', we have access to the 'them' variable from here.
+                                                //Note: A 'block' refers to the opening and closing curly bracket where you place your code "{ code is here }" 
+          }
+
         }
-        // console.log('var is function scoped', myName);
-        // console.log('let is block scoped', them);
+
+        console.log('var is accessible from anywhere inside our function. var fork:', fork);
+        console.log('let is "block" scoped, we cannot access "them" from here. We get a ReferenceError', them);
       };
 
-      // sayMyName();
-      // console.log('var is function scoped', myName);
+      sayMyName();
+
+      console.log('var is function scoped', myName);
 
       // for loop
 
@@ -134,14 +152,13 @@
       // for(let i = 10; i > 0; i--) {
       //   console.log(i);
       // }
-
-      // for(let i = 0; i <= 10; i += 2) {
-      //   console.log(i);
+      // for(let banana = 0; banana <= 10; banana += 2) {
+      //   console.log(banana);
       // }
 
 
       
-      function assignGrade(scores) {
+      function assignGrade(scores) { //[10, 70, 85, 97, 100, -2, 102];
         let grade;
         for(let i = 0; i < scores.length; i++) {
           if(scores[i] > 100) {
@@ -169,9 +186,9 @@
         }
       };
 
-      scoresArray = [10, 70, 85, 97, 100, -2, 102];
+      var bananaScores = [10, 70, 85, 97, 100, -2, 102];
 
-      // assignGrade(scoresArray);
+      // assignGrade(bananaScores);
 
 
 
